@@ -106,6 +106,15 @@ nav {
 /* Portfolio Page Section */
 #portfolio {
   margin-top: 4rem;
+  h2 {
+    margin-left: 180px;
+    font-size: 44px;
+    color: #f1edee;
+    line-height: 2rem;
+    &:first-child {
+      margin-bottom: 4rem;
+    }
+  }
 }
 #portfolio .projects {
   display: flex;
@@ -121,12 +130,6 @@ nav {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: top left;
-}
-#skills_section h2 {
-  margin-left: 180px;
-  font-size: 44px;
-  color: #F1EDEE;
-  line-height: 2rem;
 }
 #skills_section ul {
   list-style: none;
@@ -158,8 +161,10 @@ nav {
   .cards {
     flex-basis: 100%;
   }
-  #skills_section h2 {
+  #portfolio h2 {
     margin-left: 40px;
+  }
+  #skills_section h2 {
     font-size: 2.5rem;
     color: #db5461;
   }

@@ -2,10 +2,10 @@
   <div>
     <header id="site_header" class="container d_flex">
       <div class="bio__media">
-        <img src="@/assets/img/avatar.png" alt="">
+        <img src="@/assets/img/avatar.png" alt="Site owner avatar">
         <div class="bio__media__text">
           <h1>Mozart Pistori Tomazetti</h1>
-          <h3>Python Enthusiast</h3>
+          <strong>Python Enthusiast</strong>
         </div>
       </div>
       <nav>
@@ -14,11 +14,12 @@
     </header>
     <main class="container">
       <div class="error" v-if="error">
-        <h3>{{ error.title }}</h3>
+        <h2>{{ error.title }}</h2>
         <p>{{ error.message }} 😥</p>
       </div>
       <div class="loading" v-else-if="loading"> 😴  Loading ... </div>
       <section id="portfolio" v-else>
+        <h2>Projets</h2>
         <div class="cards d_flex">
           <div v-for="project in projectsList" :key="project.id" class="card__custom">
             <div class="card__custom__text">
@@ -28,15 +29,15 @@
             </div>
             <div class="meta__data d_flex">
               <div class="date">
-                <h5>Updated at</h5>
+                <h4>Updated at</h4>
                 <div>{{new Date(project.updated_at).toDateString()}}</div>
               </div>
-              <img class="avatar" :src="project.owner.avatar_url">
+              <img class="avatar" :src="project.owner.avatar_url" alt="Repository owner avatar">
             </div>
             </div>
               <div class="card__custom__img"></div>
               <div class="card_custom__button">
-              <a :href="project.html_url" target="_blank">
+              <a :href="project.html_url" target="_blank" rel="noopener noreferrer">
                 Code
               </a>
             </div>
@@ -47,7 +48,8 @@
             <button class="btn_load_more" v-on:click="loadMore()">Load More</button>
           </div>
           <div v-else>
-            <a href="https://github.com/P1tch0o" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/pitwo42" target="_blank" rel="noopener noreferrer">
+              Visit my
               <i class="fab fa-github fa-lg fa-fw"></i>
             </a>
           </div>
@@ -90,7 +92,7 @@ export default class Projects extends Vue {
     try {
       this.error = null
       this.loading = true
-      const url = 'https://api.github.com/users/P1tch0o/repos?per_page=${this.perPage}&page=${this.page}'
+      const url = 'https://api.github.com/users/pitwo42/repos?per_page=${this.perPage}&page=${this.page}'
       const response = await axios.get(url)
       this.projects = response.data
       this.projects.forEach((project: { language: string }) => {
