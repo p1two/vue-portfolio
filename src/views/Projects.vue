@@ -19,7 +19,7 @@
       </div>
       <div class="loading" v-else-if="loading"> 😴  Loading ... </div>
       <section id="portfolio" v-else>
-        <div class="cards">
+        <div class="cards d_flex">
           <div v-for="project in projectsList" :key="project.id" class="card__custom">
             <div class="card__custom__text">
             <div>

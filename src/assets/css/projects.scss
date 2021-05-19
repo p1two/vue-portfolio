@@ -22,8 +22,6 @@
   }
 }
 .cards {
-  display: flex;
-  flex-wrap: wrap;
   justify-content: space-evenly;
 }
 .card__custom {
@@ -35,7 +33,7 @@
   padding: 0.5rem;
   margin-bottom: 3rem;
   flex-grow: 1;
-  flex-basis: calc(100% / 2 - 1em);
+  flex-basis: calc(100% / 2 - 1rem);
   align-items: center;
   justify-content: space-between;
 }
@@ -87,20 +85,23 @@
 /* Header */
 #site_header {
   text-align: center;
-  padding: 2rem 0;
+  padding: 2rem 1rem;
   justify-content: space-between;
   align-items: center;
 }
 #site_header > h1 {
   text-transform: uppercase;
 }
-nav a {
-  color: #e2e2e2;
-  text-transform: uppercase;
-  font-weight: 900;
-}
-nav a:hover {
-  color: #DB5461;
+nav {
+  margin-left: auto;
+  a {
+    color: #e2e2e2;
+    text-transform: uppercase;
+    font-weight: 900;
+    &:hover {
+      color: #DB5461;
+    }
+  }
 }
 /* Portfolio Page Section */
 #portfolio {
@@ -156,5 +157,10 @@ nav a:hover {
 @media screen and (max-width: 768px) {
   .cards {
     flex-basis: 100%;
+  }
+  #skills_section h2 {
+    margin-left: 40px;
+    font-size: 2.5rem;
+    color: #db5461;
   }
 }
